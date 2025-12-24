@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs8uej8fdl2bn"]
+
+[ext_resource type="Environment" uid="uid://7urrq8d2alqp" path="res://Scenes/Levels/standard_environment.tres" id="1_aipmr"]
+[ext_resource type="PackedScene" uid="uid://k0csxi5s2f4e" path="res://Scenes/Player/player.tscn" id="2_aipmr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aipmr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aipmr"]
+albedo_color = Color(0.3475496, 0.17052227, 0.1710659, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilwcr"]
+albedo_color = Color(0.56, 0.2968, 0.2968, 1)
+
+[node name="ZaWord" type="Node3D"]
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.7815205, 0.6238797, 0, -0.6238797, -0.7815205, -2.2058885, 10.141877, 1.5089111)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_aipmr")
+
+[node name="Player" parent="." instance=ExtResource("2_aipmr")]
+
+[node name="Level" type="Node3D" parent="."]
+transform = Transform3D(6.732856, 0, 0, 0, 0.43147305, 0, 0, 0, 7.1238523, 0, -0.47682324, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Level"]
+transform = Transform3D(4.176687, 0, 0, 0, 1.0000008, 0, 0, 0, 4.517263, 0, 0, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_aipmr")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Level"]
+transform = Transform3D(0.32614452, 0, 0, 0, 1, 0, 0, 0, 0.3216553, 0.82487726, 5.04177, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Level"]
+transform = Transform3D(0.32614452, 0, 0, 0, 1, 0, 0, 0, 0.3216553, 0.82487726, 5.04177, 0.63732964)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Level"]
+transform = Transform3D(0.32614452, 0, 0, 0, 1, 0, 0, 0, 0.3216553, 0.4194863, 2.40883, 0.63732964)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
