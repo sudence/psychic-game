@@ -1,27 +1,37 @@
 [gd_scene load_steps=4 format=3 uid="uid://k0csxi5s2f4e"]
 
 [ext_resource type="Script" uid="uid://bhk1c2ttyyb66" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
+[ext_resource type="PackedScene" uid="uid://bjy1txy7645sm" path="res://Models/Player/player_character.glb" id="2_a3d8c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a3d8c"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_xpcdj"]
+radius = 0.2529297
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_uvnfx")
 
-[node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="Model" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="player_character" parent="Model" instance=ExtResource("2_a3d8c")]
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.10452851, 0.9945219, 0, -0.9945219, -0.10452851, 0, 0.5, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Head"]
+spring_length = 4.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="Head/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_a3d8c")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_xpcdj")
 
 [node name="JumpBuffer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Coyotee" type="Timer" parent="."]
+one_shot = true
+
+[node name="JumpHold" type="Timer" parent="."]
 one_shot = true
