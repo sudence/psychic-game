@@ -151,9 +151,8 @@ func _physics_process(delta: float) -> void:
 		jump_hold_timer.start(jump_hold_time)
 	
 	if jumping:
+		velocity.y = jump_velocity
 		if jump_hold_timer.time_left == 0:
 			jumping = false
 			falling = true	
-		velocity.y = jump_velocity
-		print(jump_hold_timer.time_left)
 	move_and_slide()

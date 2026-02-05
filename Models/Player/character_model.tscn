@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://drj4egywayi6"]
+
+[ext_resource type="PackedScene" uid="uid://ctn2upptrjfkj" path="res://Models/Player/character_model.blend" id="1_moysx"]
+
+[node name="character_model" instance=ExtResource("1_moysx")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(1, 5.3644935e-22, -3.258413e-07, -2.9802326e-08)
+bones/1/position = Vector3(0.5963714, -3.1192505, -3.519902)
+bones/2/position = Vector3(0.7265742, -0.47437948, -2.523087)
+bones/2/rotation = Quaternion(0.65209955, -0.27343485, 0.652099, -0.27343467)
+bones/3/position = Vector3(-0.09262693, -1.5081232, -2.8383813)
+bones/4/position = Vector3(-0.7244744, -2.9790864, 2.952028)
+bones/4/rotation = Quaternion(0.11201129, -0.69817835, -0.11201129, 0.69817907)
+bones/5/position = Vector3(-3.107464e-13, -4.28133, -4.768372e-07)
+bones/5/rotation = Quaternion(1, 2.1175824e-21, -3.1391642e-07, -3.5527128e-15)
+bones/6/position = Vector3(7.8158774e-16, -0.9225006, -3.2771492e-08)
+bones/6/rotation = Quaternion(0.27575946, -1.1462448e-08, 3.2883793e-09, 0.9612267)
+bones/7/rotation = Quaternion(7.697955e-09, 0.251477, 2.794484e-09, 0.9678633)
+bones/8/rotation = Quaternion(0.22446507, 0.4508744, -0.8441446, 0.18370563)
+bones/9/rotation = Quaternion(0.48979822, -6.739204e-10, 5.2741103e-07, 0.8718358)
+bones/11/rotation = Quaternion(-0.1428369, -0.15888436, 0.00037751973, 0.97691005)
+bones/12/rotation = Quaternion(-0.24877468, 0.30372033, 0.8642058, 0.31466419)
+bones/13/rotation = Quaternion(0.8344492, 4.9732122e-08, -9.2444543e-07, 0.55108505)
+bones/14/rotation = Quaternion(0.5518184, 0.47444198, 0.53556764, 0.42844918)
+bones/15/rotation = Quaternion(-0.00020888314, -0.0081552705, 0.0953447, 0.9954109)
+bones/16/rotation = Quaternion(-0.66151, -0.06685813, 0.74314064, 0.075343154)
+bones/17/rotation = Quaternion(-0.0014013083, 0.0062974347, -0.6396402, 0.7686475)
+bones/18/position = Vector3(1.1929884, -0.59903467, -2.2274384)
+bones/18/rotation = Quaternion(-0.3545747, 0.15636997, -0.8833826, 0.26355356)
+bones/19/position = Vector3(1.2170004, 1.4480855, -3.3702242)
+bones/20/position = Vector3(-1.1077118, -0.3341459, 3.2571237)
+bones/20/rotation = Quaternion(0.5420014, 0.2974389, 0.04264053, 0.7848225)
+bones/21/position = Vector3(-1.4968326, -0.76282895, -2.336292)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Sprint"

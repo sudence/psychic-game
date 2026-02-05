@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://k0csxi5s2f4e"]
 
 [ext_resource type="Script" uid="uid://bhk1c2ttyyb66" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
-[ext_resource type="PackedScene" uid="uid://bjy1txy7645sm" path="res://Models/Player/player_character.glb" id="2_a3d8c"]
+[ext_resource type="PackedScene" uid="uid://drj4egywayi6" path="res://Models/Player/character_model.tscn" id="2_a3d8c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a3d8c"]
 radius = 0.2529297
@@ -12,7 +12,8 @@ script = ExtResource("1_uvnfx")
 
 [node name="Model" type="Node3D" parent="."]
 
-[node name="player_character" parent="Model" instance=ExtResource("2_a3d8c")]
+[node name="character_model" parent="Model" instance=ExtResource("2_a3d8c")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.10452851, 0.9945219, 0, -0.9945219, -0.10452851, 0, 0.5, 0)
