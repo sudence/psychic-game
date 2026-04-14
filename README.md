@@ -1,10 +1,14 @@
 A 3D platformer character controller prototype
 
-Movement: WASD
-Jump: Space Bar (Hold for higher Jump)
-Look Around: Mouse
+Movement : WASD
 
-Fly: Double Tap SpaceBar
+Sprint : LShift
+
+Jump : Space Bar (Hold for higher Jump)
+
+Look Around : Mouse
+
+Fly : Double Tap SpaceBar
 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce88685d-5915-413f-979a-53d33aac61d4" />
