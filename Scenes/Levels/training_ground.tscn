@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs8uej8fdl2bn"]
+[gd_scene format=3 uid="uid://bs8uej8fdl2bn"]
 
 [ext_resource type="Environment" uid="uid://7urrq8d2alqp" path="res://Scenes/Levels/standard_environment.tres" id="1_aipmr"]
 [ext_resource type="PackedScene" uid="uid://k0csxi5s2f4e" path="res://Scenes/Player/player.tscn" id="2_aipmr"]
@@ -13,162 +13,217 @@ albedo_color = Color(0.3475496, 0.17052227, 0.1710659, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilwcr"]
 albedo_color = Color(0.56, 0.2968, 0.2968, 1)
 
-[node name="ZaWord" type="Node3D"]
+[node name="ZaWord" type="Node3D" unique_id=31276238]
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1891148353]
 transform = Transform3D(1, 0, 0, 0, -0.7815205, 0.6238797, 0, -0.6238797, -0.7815205, -2.2058885, 10.141877, 1.5089111)
 light_energy = 1.5
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=764102839]
 environment = ExtResource("1_aipmr")
 
-[node name="Player" parent="." instance=ExtResource("2_aipmr")]
+[node name="Player" parent="." unique_id=1008993795 instance=ExtResource("2_aipmr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1804693, 0)
 floor_snap_length = 0.5
+speed = 10.0
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="." unique_id=31258307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47682324, 0)
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Level" unique_id=840122033]
 transform = Transform3D(152.7073, 0, 0, 0, 1.0000008, 0, 0, 0, 145.63474, 0, 0, 0)
 use_collision = true
 mesh = SubResource("BoxMesh_ilwcr")
 material = SubResource("StandardMaterial3D_aipmr")
 
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Level" unique_id=1604140784]
 transform = Transform3D(9.525158, 0, 0, 0, 25.493567, 0, 0, 0, 9.525158, -16.362848, 2.7422228, -17.397678)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D29" type="CSGMesh3D" parent="Level" unique_id=769326678]
+transform = Transform3D(9.525158, 0, 0, 0, 25.493567, 0, 0, 0, 9.525158, -16.362848, -2.8520422, -55.716698)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D31" type="CSGMesh3D" parent="Level" unique_id=330889088]
+transform = Transform3D(9.525158, 0, 0, 0, 25.493567, 0, 0, 0, 9.525158, 53.402016, 2.7704668, 2.6362436)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D33" type="CSGMesh3D" parent="Level" unique_id=1525468056]
+transform = Transform3D(9.525158, 0, 0, 0, 25.493567, 0, 0, 0, 16.671782, -27.04026, -0.46686983, 34.904095)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="Level" unique_id=452537829]
 transform = Transform3D(15.421999, 0, 0, 0, 25.493567, 0, 0, 0, 19.84483, -16.362848, -5.4706783, -17.397678)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D17" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D17" type="CSGMesh3D" parent="Level" unique_id=1924806635]
 transform = Transform3D(4.5374727, 0, 0, 0, 9.790075, 0, 0, 0, 56.550186, -32.467285, 2.8396006, -17.397678)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D21" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D21" type="CSGMesh3D" parent="Level" unique_id=405224161]
 transform = Transform3D(4.5374727, 0, 0, 0, 9.790075, 0, 0, 0, 158.68343, 76.56957, 2.8396006, -0.48722458)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D22" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D22" type="CSGMesh3D" parent="Level" unique_id=1610940186]
 transform = Transform3D(-1.9833924e-07, 0, 158.68343, 0, 9.790075, 0, -4.5374727, 0, -6.9362727e-06, 1.5562057, 2.8396006, -72.53296)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D23" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D23" type="CSGMesh3D" parent="Level" unique_id=1364882837]
 transform = Transform3D(-4.5374727, 0, -1.3872545e-05, 0, 9.790075, 0, 3.9667847e-07, 0, -158.68343, -73.62923, 2.8396006, -1.5902863)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D24" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D24" type="CSGMesh3D" parent="Level" unique_id=604456170]
 transform = Transform3D(5.950177e-07, 0, -158.68343, 0, 9.790075, 0, 4.5374727, 0, 2.0808819e-05, -1.4058914, 2.8396006, 71.04032)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D18" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D18" type="CSGMesh3D" parent="Level" unique_id=1078483516]
 transform = Transform3D(-1.9833924e-07, 0, 23.704792, 0, 9.790074, 0, -4.5374722, 0, -1.0361692e-06, -32.467285, 2.8396006, 17.73064)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D19" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D34" type="CSGMesh3D" parent="Level" unique_id=774122781]
+transform = Transform3D(5.692732, -0.09250687, 2.1629212, 0.41605875, 3.4264953, -7.1213474, -0.58453214, 1.5379927, 15.995755, -30.850801, 13.790569, 21.867836)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D35" type="CSGMesh3D" parent="Level" unique_id=348408973]
+transform = Transform3D(5.692732, -0.09250687, 2.1629212, 0.41605875, 3.4264953, -7.1213474, -0.58453214, 1.5379927, 15.995755, -34.157356, 24.6773, -2.5856094)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D19" type="CSGMesh3D" parent="Level" unique_id=208947268]
 transform = Transform3D(-4.3828616, 0, 5.1362195, 0, 9.790073, 0, -1.1743841, 0, -19.168633, -19.290352, 2.8396006, 11.309807)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D20" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D20" type="CSGMesh3D" parent="Level" unique_id=479330706]
 transform = Transform3D(-4.537472, 0, -3.7788157e-06, 0, 9.790073, 0, 1.1920929e-07, 0, -78.63265, -44.671867, 2.8396006, -18.257582)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D25" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D27" type="CSGMesh3D" parent="Level" unique_id=386461882]
+transform = Transform3D(7.912991e-08, 0, 78.632645, 0, 9.7900715, 0, -4.5374713, 0, -3.4167306e-07, -6.297802, 2.8396006, -53.9633)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D30" type="CSGMesh3D" parent="Level" unique_id=1019377512]
+transform = Transform3D(4.505787, 0.43582293, -9.154392, -3.7252903e-09, 22.55746, 12.708689, 0.53528893, -3.6685321, 77.05698, 51.619583, 2.9457712, 6.2088556)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D32" type="CSGMesh3D" parent="Level" unique_id=1164843074]
+transform = Transform3D(-7.322982e-07, 0, -78.63263, 0, 22.857975, 0, 16.753029, 0, -3.4371415e-06, 9.9698715, 8.6310005, 50.53378)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D28" type="CSGMesh3D" parent="Level" unique_id=81648839]
+transform = Transform3D(8.590021, 0, 25.087252, 0, 9.790071, 0, -8.590021, 0, 25.087252, 47.241096, 2.8396006, -45.164307)
+use_collision = true
+mesh = SubResource("BoxMesh_aipmr")
+material = SubResource("StandardMaterial3D_ilwcr")
+
+[node name="CSGMesh3D25" type="CSGMesh3D" parent="Level" unique_id=224564153]
 transform = Transform3D(-4.5374722, 4.851757e-08, -2.5730383e-06, 0, 9.61432, 10.199852, 1.1920929e-07, 1.846728, -53.101818, -48.241383, -2.163302, -16.71819)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D7" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="Level" unique_id=1878994927]
 transform = Transform3D(6.203458, 0, 0, 0, 13.68846, 0, 0, 0, 3.8137765, -20.87972, 3.2884855, -26.890268)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D8" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="Level" unique_id=920716303]
 transform = Transform3D(6.203458, 0, 0, 0, 13.68846, 0, 0, 0, 3.8137765, -20.87972, 5.544504, -21.483614)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D9" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="Level" unique_id=1441460258]
 transform = Transform3D(6.203458, 0, 0, 0, 13.68846, 0, 0, 0, 3.8137765, -31.298098, 6.6244802, -14.693848)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D11" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="Level" unique_id=1621672060]
 transform = Transform3D(6.203458, 0, 0, 0, 7.26917, 3.2315824, 0, -11.598841, 2.025282, -31.298098, 14.449098, -21.33012)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D12" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D12" type="CSGMesh3D" parent="Level" unique_id=1318013558]
 transform = Transform3D(6.203458, 0, 0, 0, 0.49586582, 3.811273, 0, -13.679476, 0.13815439, -31.298098, 18.029993, -33.04418)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D13" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D13" type="CSGMesh3D" parent="Level" unique_id=1198115402]
 transform = Transform3D(6.203458, 0, 0, 0, 0.21250096, 3.8902223, 0, -5.862275, 0.1410162, -41.61055, 17.964815, -36.315365)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D26" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D26" type="CSGMesh3D" parent="Level" unique_id=47721247]
 transform = Transform3D(6.203457, 0, 0, 0, 0.042175602, 3.8806548, 0, -10.326814, 0.015848912, -49.746952, 5.854366, -47.52628)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D14" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D14" type="CSGMesh3D" parent="Level" unique_id=1992058444]
 transform = Transform3D(6.203458, 0, 0, 0, 0.21250096, 3.8902223, 0, -5.862275, 0.1410162, -41.61055, 20.151852, -27.799921)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D15" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D15" type="CSGMesh3D" parent="Level" unique_id=1132439410]
 transform = Transform3D(6.203458, 0, 0, 0, 0.21250096, 3.8902223, 0, -5.862275, 0.1410162, -41.413815, 22.489994, -18.71998)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D16" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D16" type="CSGMesh3D" parent="Level" unique_id=321832097]
 transform = Transform3D(6.203458, 0, 0, 0, -6.4207044, 3.1896718, 0, -9.177555, -2.231525, -41.39986, 25.297932, -13.041361)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D10" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="Level" unique_id=1292417304]
 transform = Transform3D(6.295382, 0, 0, 0, 46.972557, 0, 0, 0, 10.557567, -35.24294, 6.6244802, -14.693848)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")
 material = SubResource("StandardMaterial3D_ilwcr")
 
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="Level"]
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="Level" unique_id=1027676447]
 transform = Transform3D(2.8018925, -29.817724, 0, 9.103737, 9.177116, 0, 0, 0, 9.525158, -1.9446726, 0.29587772, -17.397678)
 use_collision = true
 mesh = SubResource("BoxMesh_aipmr")

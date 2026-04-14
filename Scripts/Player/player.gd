@@ -9,7 +9,7 @@ var flying := false
 var actual_speed : float
 @export var acceleration := 1.0
 var actual_acceleration : float
-@export var sprint_multiplier := 3.0
+@export var sprint_multiplier : float = 2.0
 var sprinting : bool
 
 var jumping : bool 
@@ -31,12 +31,18 @@ var start_coyotee_time := 0.1
 @onready var coyotee_timer : Timer = $Coyotee
 @export var jump_hold_time := 0.2
 @onready var jump_hold_timer : Timer = $JumpHold
+@onready var double_jump: Timer = $DoubleJump
 
 #Camera Movement
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/SpringArm3D/Camera3D
 @export var sensitivity : float = 0.01
 @onready var model: Node3D = $Model
+
+#Visuals
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_player: AnimationPlayer = $Model/character_model/AnimationPlayer
+var anim_lerper: float
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -66,13 +72,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("jump"):
 		jump_buffer_timer.start(start_jbuffer_time)
+		
 		#fly start
-		if coyotee_timer.time_left == 0 and !flying:
+		if double_jump.time_left > 0:
 			if actual_speed == speed:
 				actual_speed = flying_speed
 			elif actual_speed == speed * sprint_multiplier:
 				actual_speed = flying_speed * sprint_multiplier
 			flying = true
+		
+		double_jump.start()
+		
 	elif  event.is_action_released("jump"):
 		jumping = false
 		falling = true
@@ -80,13 +90,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("sprint"):
 		actual_speed = speed * sprint_multiplier
 		actual_acceleration = acceleration * sprint_multiplier * 0.5
+		sprinting = true
 	elif event.is_action_released("sprint"):
 		if flying:
 			actual_speed = flying_speed
 		else:
 			actual_speed = speed
 		actual_acceleration = acceleration
-
+		sprinting = false
 
 var forward : Vector3
 var right : Vector3
@@ -111,7 +122,13 @@ func _process(delta: float) -> void:
 			model.rotation = model.rotation.lerp(Vector3(0, model.rotation.y, 0), 0.5)
 			var target_angle = Vector3.FORWARD.signed_angle_to(last_move_direction, Vector3.UP)
 			model.rotation.y = lerp_angle(model.rotation.y, target_angle, 20 * delta)
-
+		
+	#Animations
+	var anim_value : float = 0 if input_dir == Vector2.ZERO else 1
+	anim_lerper = move_toward(anim_lerper, anim_value, 5 * delta)
+	animation_tree["parameters/Blend2/blend_amount"] = anim_lerper
+	
+	animation_tree["parameters/SprintTimeScale/scale"] = 1.2 if sprinting else 1.0
 
 func _physics_process(delta: float) -> void:
 	horizontal_move_dir = forward * input_dir.y + right * input_dir.x
